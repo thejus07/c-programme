@@ -8,9 +8,16 @@ int main()
    {
       for(j=0;j<k;j++)
       {
-         printf("*");
+           if(i==0||i==k-1||j==0||j==k-1)
+                {
+                    printf("*");
+                }
+           else{
+                 printf(" ");
+                }
       }
       printf("\n");
    }
    return 0;
 }
+

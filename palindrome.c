@@ -1,37 +1,33 @@
 #include<stdio.h>
-void armstrong(int num);
-void armstrong(int num)
+void arm(int a)
 {
-    scanf("%d",num);
-    int rem = num%10;
-    int sum = (sum*10)+rem;
-    num = num/10;
-    if(num==sum)
+    int res=0,rem=0;
+    int c2=a;
+    while(a--)
     {
-        printf("NUMBER IS ARMSTRONG");
+        rem=a%10;
+        res=res+rem*rem*rem;
+        a=a/10;
     }
-    else{
-        printf("NUMBER IS NOT AN AMSTRONG");
-    }
+    if(c2==res)
+        printf("armstrong\n");
+    else
+        printf("not armstrong\n");
 }
 int main()
 {
-    void palindrome(int n);
-    int n,rev=0,rem,org;
-    org = n;
-    while(n!=0)
+    int a,res1=0,rem1=0;
+    scanf("%d",&a);
+    int c1=a;
+    arm(a);
+    while(a)
     {
-        scanf("%d",&n);
-        rem = n%10;
-        rev = rev*10+rem;
-        n=n/10;
-        if(org== rem)
-        {
-            printf("NUMBER IS PALINDROME");
-        }
-        else
-            {
-            printf("NUMBER IS NOT A PALINDROME");
-        }
+        rem1=a%10;
+        res1=res1*10+rem1;
+        a=a/10;
     }
+    if(c1==res1)
+        printf("palindrome\n");
+    else
+        printf("not palindrome\n");
 }

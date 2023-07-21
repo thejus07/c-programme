@@ -3,17 +3,9 @@
 struct node
 {
     int data;
-    struct node*left;
-    struct node*right;
+    struct node*next;
+    struct node*prev;
 }*head,*temp,*newnode;
-void Preorder()
-{
-    if (head == NULL)
-        return head;
-            printf("%d ", head->data);
-    Preorder(head->left);
-    Preorder(head->right);
-}
 
 int main()
 {
@@ -24,8 +16,8 @@ int main()
             newnode=(struct node*)malloc(sizeof(struct node));
              printf("enter the data:");
             scanf("%d",&newnode->data);
-            newnode->left=NULL;
-            newnode->right=NULL;
+            newnode->next=NULL;
+            newnode->prev=NULL;
             if(head==NULL)
             {
                 head=newnode;
@@ -33,16 +25,15 @@ int main()
             }
             else
                 {
-                    temp->right=newnode;
-                    newnode->left=temp;
-                    temp=temp->right;
+                    temp->next=newnode;
+                    newnode->prev=temp;
+                    temp=temp->next;
                 }
         }
-        Preorder();
-        temp=head;
+        head=temp;
         while(temp!=NULL)
         {
             printf("%d",temp->data);
-            temp=temp->right;
+            temp=temp->prev;
         }
-    }
+}

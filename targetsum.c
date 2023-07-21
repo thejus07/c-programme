@@ -1,25 +1,24 @@
 #include<stdio.h>
 int main()
 {
-    int n;
-    scanf("%d",&n);
-    int a[n];
-    for(int i=0;i<n;i++)
-    {
-        scanf("%d",&a[i]);
-    }
-    int target;
+    int a[]={5,7,1,2,8,4,3};
+    int i,j,n,k,target;
+    n=sizeof (a)/sizeof (a[0]);
     scanf("%d",&target);
-    for(int i=0;i<n;i++)
+    for(i=0;i<n;i++)
     {
-        for(int j=i+1;j<n;j++)
+        for(j=i+1;j<n;j++)
         {
             if(a[i]+a[j]==target)
             {
-                printf("%d + %d= %d\n",a[i],a[j],target);
+                printf("%d %d\t",a[i],a[j]);
+                k=1;
             }
-            else
-            continue;
+
         }
     }
-
+            if(k!=1)
+            {
+                printf("no 2 values sum up to 19");
+            }
+}

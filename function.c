@@ -1,14 +1,12 @@
-#include <stdio.h>
-int sum(int c,int d)
+#include<stdio.h>
+int sum(int a, int b)
 {
-    int temp=c+d;
-    return temp;
+int sum=a+b;
+return sum;
 }
 int main()
 {
-
     int a,b;
-    printf("enter the value for a & b:");
-    scanf("%d%d",&a,&b);
+    scanf("%d %d",&a,&b);
     printf("%d",sum(a,b));
 }

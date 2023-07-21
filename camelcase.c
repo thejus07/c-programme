@@ -5,7 +5,7 @@ int main()
     int i,j;
     char a[50];
     gets(a);
-    for(i=0;i<strlen(a);i++)
+    for(i=0;a[i]!='\0';i++)
     {
         if(i==0)
         {

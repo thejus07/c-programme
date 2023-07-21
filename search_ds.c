@@ -3,29 +3,18 @@
 struct node
 {
     int data;
-    struct node*left;
-    struct node*right;
+    struct node*next;
 }*head,*temp,*newnode;
-void Preorder()
-{
-    if (head == NULL)
-        return head;
-            printf("%d ", head->data);
-    Preorder(head->left);
-    Preorder(head->right);
-}
-
 int main()
 {
-    int size,i;
+    int size,i,a,count=0,flag;
     scanf("%d",&size);
     for(i=0;i<size;i++)
         {
             newnode=(struct node*)malloc(sizeof(struct node));
              printf("enter the data:");
             scanf("%d",&newnode->data);
-            newnode->left=NULL;
-            newnode->right=NULL;
+            newnode->next=NULL;
             if(head==NULL)
             {
                 head=newnode;
@@ -33,16 +22,27 @@ int main()
             }
             else
                 {
-                    temp->right=newnode;
-                    newnode->left=temp;
-                    temp=temp->right;
+                    temp->next=newnode;
+                    temp=newnode;
                 }
         }
-        Preorder();
+        printf("enter the searching element:");
+        scanf("%d",&a);
         temp=head;
         while(temp!=NULL)
         {
-            printf("%d",temp->data);
-            temp=temp->right;
+            if(a==temp->data)
+            {
+                flag=1;
+            }
+            temp=temp->next;
         }
-    }
+        if(flag==0)
+        {
+            printf("not found");
+        }
+        else
+        {
+            printf("found");
+        }
+}
